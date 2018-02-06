@@ -3,16 +3,22 @@
     <v-flex xs6 offset-xs3>
       <div class="white elevation-2">
         <v-toolbar flat dense class="cyan" dark>
-        <v-toolbar-title>Register</v-toolbar-title>
+        <v-toolbar-title >Register</v-toolbar-title>
         </v-toolbar>
           <div class="pl-4 pr-4 pt-2 pb-2">
-            <input v-model="email" type="email" name="email" placeholder="email"/>
+            <v-text-field 
+              v-model="email" 
+              label="Email" 
+              type="email"/>
             <br>
-            <input v-model="password" type="password" name="password" placeholder="password"/>
+            <v-text-field 
+              v-model="password" 
+              label="Password" 
+              type="password"/>
             <br>
             <div class="error" v-html="error"/>
             <br>
-            <v-btn class="cyan" @click="register">Register</v-btn>
+            <v-btn dark class="cyan" @click="register">Register</v-btn>
           </div>
         </div>
       </v-flex>
@@ -29,11 +35,11 @@ export default {
       error: null
     }
   },
-  watch: {
-    email (value) {
-      console.log('email has changed', value)
-    }
-  },
+  // watch: {
+  //   email (value) {
+  //     console.log('email has changed', value)
+  //   }
+  // },
   methods: {
     async register() {
       try {
